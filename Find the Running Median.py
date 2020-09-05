@@ -14,13 +14,13 @@
 
 import os
 import sys
-
+import bisect
 
 #
 # Complete the runningMedian function below.
 #
 def runningMedian(a,fptr):
-    a.sort()
+    #a.sort()
     mid=(len(a)/2)-1
     #print(round(mid)," ",len(a))
     if(len(a)%2==0):
@@ -41,7 +41,7 @@ if __name__ == '__main__':
 
     for _ in range(a_count):
         a_item = int(input())
-        a.append(a_item)
+        bisect.insort(a,a_item)
         runningMedian(a,fptr)
 
 
